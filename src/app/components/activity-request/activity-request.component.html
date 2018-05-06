@@ -1,0 +1,77 @@
+<app-header></app-header>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="container-fluid">
+
+    <div class="col-lg-3 card divisor"  >
+      <h1 class="h1-strong">Resum</h1>
+    </div>
+
+    <div class="col-lg-4 card divisor">
+      <h1 class="h1-strong">Les teves sol·licituds</h1>
+      <table class="table table-striped tabla">
+        <thead>
+          <tr>
+            <th>Nom Activitat</th>
+            <th>Descripció</th>
+            <th>Usuari</th>
+            <th>Gestionar</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let petition of myPetition">
+          <td>
+            <!--{{petition.activity.name}} -->
+          </td>
+          <td>
+            <!--{{petition.activity.description}} -->
+          </td>
+          <td>
+            {{petition.userTo.name}}
+          </td>
+          <td>
+            <button class="btn btn-danger"  >
+              <i class="fa fa-trash" style="font-size: 18px "></i>
+            </button>
+            <button class="btn btn-danger"  >
+              <i class="fa fa-check" style="font-size: 18px "></i>
+            </button>
+          </td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-lg-4 card divisor">
+      <h1 class="h1-strong">Sol·licituds d'altres usuaris</h1>
+      <table class="table table-striped tabla">
+        <thead>
+          <tr>
+            <th>Nom activitat</th>
+            <th> Descripció</th>
+            <th> Usuari </th>
+            <th> Gestionar </th>
+          </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let request of theirPetition">
+          <td><!--{{petition.activity.name}} --> </td>
+          <td><!--{{petition.activity.description}} --></td>
+          <td>{{request.userFrom.name}}</td>
+          <td>
+            <button class="btn btn-danger"  >
+              <i class="fa fa-trash" style="font-size: 18px "></i>
+            </button>
+            <button class="btn btn-danger"  >
+              <i class="fa fa-check" style="font-size: 18px "></i>
+            </button>
+          </td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+</div>
